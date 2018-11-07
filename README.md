@@ -6,7 +6,8 @@
   --> An der Seite Maven Projekte, Aufs Plus klicken und dann die pom.xml suchen
 - Projekt SDK auf Java 1.8 setzten
 
-Zum starten einfach Application.java ausführen
+Zum Starten einfach Application.java ausführen.
+Die Applikation ist dann [hier](http://localhost:8081/login) zu erreichen.
 
 
 ### Accounts:  
