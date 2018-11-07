@@ -1,6 +1,6 @@
 # Webapp
 
-Für IntelliJ user:
+### Installation für IntelliJ user:  
 - Projekt importieren
 - Projekt zu einem Maven Projekt machen
   --> An der Seite Maven Projekte, Aufs Plus klicken und dann die pom.xml suchen
@@ -8,8 +8,8 @@ Für IntelliJ user:
 
 Zum starten einfach Application.java ausführen
 
-Accounts:
 
+### Accounts:  
 | Users        | PW   | Role  | 2FA |
 | ------------ |:----:| -----:| --- |
 |test@test.com | test | Admin | -   |
