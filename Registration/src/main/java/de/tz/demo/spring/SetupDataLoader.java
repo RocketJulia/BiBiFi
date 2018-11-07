@@ -64,9 +64,13 @@ public class SetupDataLoader implements ApplicationListener<ContextRefreshedEven
         createUserIfNotFound("user@user.com","user", "user", "user",  new ArrayList<Role>(Arrays.asList(userRole)));
         createUserIfNotFound("rem@rem.com","rem", "rem", "rem",  new ArrayList<Role>(Arrays.asList(userRole)));
         
-
-        createTransactionIfNotFound("test@test.com", "100 Euro abgebucht");
-        createTransactionIfNotFound("user@user.com", "300 Euro eingezahlt");
+        /**
+        createTransactionIfNotFound("test@test.com", "100  Euro abgebucht");
+        createTransactionIfNotFound("test@test.com", "75   Euro eingezahlt");
+        createTransactionIfNotFound("test@test.com", "23   Euro abgebucht");
+        createTransactionIfNotFound("test@test.com", "1.20 Euro abgebucht");
+        createTransactionIfNotFound("user@user.com", "300  Euro eingezahlt");
+        */
         alreadySetup = true;
     }
 

@@ -11,12 +11,11 @@ import org.passay.PasswordData;
 import org.passay.PasswordValidator;
 import org.passay.Rule;
 import org.passay.RuleResult;
-//import org.passay.WhitespaceRule;
-//import org.passay.DigitCharacterRule;
-//import org.passay.SpecialCharacterRule;
-//import org.passay.UppercaseCharacterRule;
-//import org.passay.LowercaseCharacterRule;
-//import org.passay.DictionaryRule;
+import org.passay.WhitespaceRule;
+import org.passay.DigitCharacterRule;
+import org.passay.SpecialCharacterRule;
+import org.passay.UppercaseCharacterRule;
+import org.passay.LowercaseCharacterRule;
 
 import com.google.common.base.Joiner;
 
@@ -34,12 +33,11 @@ public class PasswordConstraintValidator implements ConstraintValidator<ValidPas
     	
         List<Rule> myRules = new Vector<>();
         myRules.add(new LengthRule(8, 30));
-//        myRules.add(new UppercaseCharacterRule(1));
-//        myRules.add(new LowercaseCharacterRule(1));
-//        myRules.add(new DigitCharacterRule(1));
-//        myRules.add(new SpecialCharacterRule(2));
-//        myRules.add(new DictionaryRule());
-//        myRules.add(new WhitespaceRule());
+        myRules.add(new UppercaseCharacterRule(1));
+        myRules.add(new LowercaseCharacterRule(1));
+        myRules.add(new DigitCharacterRule(1));
+        myRules.add(new SpecialCharacterRule(2));
+        myRules.add(new WhitespaceRule());
         
         final PasswordValidator validator = new PasswordValidator(myRules);
             

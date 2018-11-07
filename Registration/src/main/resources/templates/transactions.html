@@ -15,4 +15,9 @@
 </nav>
 <div class="container">
 	<h1>Your transactions</h1>
+    <table th:object="${transactions}" id="userTable" border="1">
+    <tr th:each="transaction :${transactions}">
+        <td  th:text="${transaction}"></td>
+    </tr>
+</table>
 </div>
