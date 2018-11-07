@@ -11,11 +11,11 @@ Die Applikation ist dann [hier](http://localhost:8081/login) zu erreichen.
 
 
 ### Accounts:  
-| Users            | PW       | Role  | 2FA |
+| Users          | PW       | Role  | 2FA |
 | -------------- |:--------:| -----:| --- |
 |admin@admin.com | admin    | Admin | -   |
 |2fa@2fa.com     | 2fa      | Admin | Tim |
 |user@user.com   | user     | User  | -   |
 |rem@rem.com     | rem      | User  | -   |
 
-Der Admin hat eine Transactionen, der User eine einzige.
+Der Admin hat Transactionen und der User eine einzige.
