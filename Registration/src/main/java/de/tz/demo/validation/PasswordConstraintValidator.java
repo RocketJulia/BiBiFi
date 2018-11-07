@@ -1,8 +1,8 @@
 package de.tz.demo.validation;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+//import java.io.FileNotFoundException;
+//import java.io.FileReader;
+//import java.io.IOException;
 import java.util.List;
 import java.util.Vector;
 
@@ -15,10 +15,10 @@ import org.passay.PasswordValidator;
 import org.passay.Rule;
 import org.passay.RuleResult;
 import org.passay.WhitespaceRule;
-import org.passay.dictionary.WordListDictionary;
-import org.passay.dictionary.WordLists;
-import org.passay.dictionary.sort.ArraysSort;
-import org.passay.DictionaryRule;
+//import org.passay.dictionary.WordListDictionary;
+//import org.passay.dictionary.WordLists;
+//import org.passay.dictionary.sort.ArraysSort;
+//import org.passay.DictionaryRule;
 import org.passay.DigitCharacterRule;
 import org.passay.SpecialCharacterRule;
 import org.passay.UppercaseCharacterRule;
@@ -40,7 +40,7 @@ public class PasswordConstraintValidator implements ConstraintValidator<ValidPas
     
     	List<Rule> myRules = new Vector<>();
     	
-    	/**
+    	/** kein vernünftiges Dictionary vorhanden atm
     	DictionaryRule dictionaryrule;
     	try {
     		dictionaryrule = new DictionaryRule(
