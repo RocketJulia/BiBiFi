@@ -40,7 +40,6 @@ public class SetupDataLoader implements ApplicationListener<ContextRefreshedEven
     @Autowired
     private TransactionRepository transactionRepository;
 
-    // API
 
     @Override
     @Transactional
@@ -53,7 +52,6 @@ public class SetupDataLoader implements ApplicationListener<ContextRefreshedEven
         final Privilege writePrivilege = createPrivilegeIfNotFound("WRITE_PRIVILEGE");
         final Privilege passwordPrivilege = createPrivilegeIfNotFound("CHANGE_PASSWORD_PRIVILEGE");
 
-        // == create initial roles
         final List<Privilege> adminPrivileges = new ArrayList<Privilege>(Arrays.asList(readPrivilege, writePrivilege, passwordPrivilege));
         final List<Privilege> userPrivileges = new ArrayList<Privilege>(Arrays.asList(readPrivilege, passwordPrivilege));
         final Role adminRole = createRoleIfNotFound("ROLE_ADMIN", adminPrivileges);
@@ -67,13 +65,13 @@ public class SetupDataLoader implements ApplicationListener<ContextRefreshedEven
         createUserIfNotFound("pw@pw.com","pw", "pw", "pw",  new ArrayList<Role>(Arrays.asList(userRole)));
         createUserIfNotFound("pwd@pwd.com","pwd", "pwd", "pwd",  new ArrayList<Role>(Arrays.asList(adminRole)));
         
-        /**
+        
         createTransactionIfNotFound("admin@admin.com", "100  Euro abgebucht");
         createTransactionIfNotFound("admin@admin.com", "75   Euro eingezahlt");
         createTransactionIfNotFound("admin@admin.com", "23   Euro abgebucht");
         createTransactionIfNotFound("admin@admin.com", "1.20 Euro abgebucht");
         createTransactionIfNotFound("user@user.com", "300  Euro eingezahlt");
-        */
+        
         alreadySetup = true;
     }
 
@@ -114,7 +112,7 @@ public class SetupDataLoader implements ApplicationListener<ContextRefreshedEven
         return user;
     }
     
-    private final MyTransaction createTransactionIfNotFound(String userEmail, String transactionString) {
+	private final MyTransaction createTransactionIfNotFound(String userEmail, String transactionString) {
     	List<MyTransaction> transactions = transactionRepository.findByUserEmail(userEmail); 
     	MyTransaction transaction = new MyTransaction();
     	if(transactions.size() == 0) {
