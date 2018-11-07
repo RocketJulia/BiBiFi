@@ -17,7 +17,7 @@
 <div class="container">
 	<div th:if="${param.message != null}" class="alert alert-info" th:text="${param.message[0]}">message</div>
 	
-    <h1>This is the landing page</h1>
+     
     
     <div sec:authorize="hasAuthority('READ_PRIVILEGE')">This text is only visible to a user</div>
           

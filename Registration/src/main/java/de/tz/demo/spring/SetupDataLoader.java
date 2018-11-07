@@ -60,15 +60,18 @@ public class SetupDataLoader implements ApplicationListener<ContextRefreshedEven
         final Role userRole = createRoleIfNotFound("ROLE_USER", userPrivileges);
 
         createUserIfNotFound("test@test.com", "Test", "Test", "test", new ArrayList<Role>(Arrays.asList(adminRole)));
+        createUserIfNotFound("admin@admin.com", "admin", "admin", "admin", new ArrayList<Role>(Arrays.asList(adminRole)));
         createUserIfNotFound("2fa@2fa.com","2fa", "2fa", "2fa",  new ArrayList<Role>(Arrays.asList(adminRole)));
         createUserIfNotFound("user@user.com","user", "user", "user",  new ArrayList<Role>(Arrays.asList(userRole)));
         createUserIfNotFound("rem@rem.com","rem", "rem", "rem",  new ArrayList<Role>(Arrays.asList(userRole)));
+        createUserIfNotFound("pw@pw.com","pw", "pw", "pw",  new ArrayList<Role>(Arrays.asList(userRole)));
+        createUserIfNotFound("pwd@pwd.com","pwd", "pwd", "pwd",  new ArrayList<Role>(Arrays.asList(adminRole)));
         
         /**
-        createTransactionIfNotFound("test@test.com", "100  Euro abgebucht");
-        createTransactionIfNotFound("test@test.com", "75   Euro eingezahlt");
-        createTransactionIfNotFound("test@test.com", "23   Euro abgebucht");
-        createTransactionIfNotFound("test@test.com", "1.20 Euro abgebucht");
+        createTransactionIfNotFound("admin@admin.com", "100  Euro abgebucht");
+        createTransactionIfNotFound("admin@admin.com", "75   Euro eingezahlt");
+        createTransactionIfNotFound("admin@admin.com", "23   Euro abgebucht");
+        createTransactionIfNotFound("admin@admin.com", "1.20 Euro abgebucht");
         createTransactionIfNotFound("user@user.com", "300  Euro eingezahlt");
         */
         alreadySetup = true;

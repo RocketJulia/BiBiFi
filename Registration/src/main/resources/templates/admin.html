@@ -19,9 +19,10 @@
      <p sec:authorize="!hasAuthority('WRITE_PRIVILEGE')" th:text="#{message.unauth}">unauth</p>   
         
      <h1 sec:authorize="hasAuthority('WRITE_PRIVILEGE')" th:text="#{label.pages.admin.message}">admin</h1>
-	<a th:href="@{/loggedUsers}" th:text="#{label.pages.users.message}">View logged in users</a>
+     
+	<a sec:authorize="hasAuthority('WRITE_PRIVILEGE')" th:href="@{/loggedUsers}" th:text="#{label.pages.users.message}">View this logged in users</a>
 	<br />	   
-	<a th:href="@{/loggedUsersFromSessionRegistry}" th:text="#{label.pages.users.sessionregistry.message}">View logged in users</a>
+	<a sec:authorize="hasAuthority('WRITE_PRIVILEGE')" th:href="@{/loggedUsersFromSessionRegistry}" th:text="#{label.pages.users.sessionregistry.message}">View all logged in users</a>
 </div>
 </body>
 </html>
