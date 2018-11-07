@@ -16,3 +16,5 @@ Zum starten einfach Application.java ausführen
 |2fa@2fa.com     | 2fa      | Admin | Tim |
 |user@user.com   | user     | User  | -   |
 |rem@rem.com     | rem      | User  | -   |
+
+Der Admin hat eine Transactionen, der User eine einzige.
