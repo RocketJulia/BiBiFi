@@ -29,9 +29,7 @@ Das ermöglicht das automatisierte Testen mit zum Beispiel Perl.
 
 ### Testing for Weak or unenforced username policy   
 Gibt es eine Struktur für Usernames?  
-Unterschiedliche Fehlermeldungen für gültige und ungültoge Usernames?  
-
-Man kann ein Username Dictionary verwenden.
+Unterschiedliche Fehlermeldungen für gültige und ungültige Usernames?  
 
 
 ## 4.5 [Authentication Testing](https://www.owasp.org/index.php/Testing_for_authentication)
