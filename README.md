@@ -7,3 +7,12 @@ Für IntelliJ user:
 - Projekt SDK auf Java 1.8 setzten
 
 Zum starten einfach Application.java ausführen
+
+Accounts:
+
+| Users        | PW   | Role  | 2FA |
+| ------------ |:----:| -----:| --- |
+|test@test.com | test | Admin | -   |
+|2fa@2fa.com   | 2fa  | Admin | Tim |
+|user@user.com | user | User  | -   |
+|rem@rem.com   | rem  | User  | -   |
