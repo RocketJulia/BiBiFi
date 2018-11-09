@@ -38,5 +38,3 @@ In einem anderen Browser kann man nun die .jsp's direkt aufrufen und ist dann im
 
 Es können sich mehrer User anmelden, wenn einer dann z.B. Geld abhebt landen die anderen in der Session dieses Users.
 
-
-Es können long Überläufe erzeugt werden.
