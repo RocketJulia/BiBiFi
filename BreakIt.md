@@ -16,18 +16,18 @@ An zwei Rechnern gleichzeitig an einem Account anmelden
 * an beiden kann man geld Abheben
 
 JSESSIONID -> Java Anwendung, 
-ATMServlet -> Servlet Architektur
+ATMServlet -> Servlet Architektur  
 
-Fehlermeldung wenn irgendwas schiefläuft 405, keine weiteren Informationen
-
-
-Business Logik:
-Unsinnige Eingaben für Geldfelder werden großteils an der Oberfläche abgefangen,
-eine geht und führt intern zu Errors:
-- 0 eingeben
+Fehlermeldung wenn irgendwas schiefläuft 405, keine weiteren Informationen  
 
 
-Scanner verwendet:
-nmap
-wmap
-sqlmap
+Business Logik:  
+Unsinnige Eingaben für Geldfelder werden großteils an der Oberfläche abgefangen,  
+eine geht und führt intern zu Errors:  
+- 0 eingeben  
+
+
+Scanner verwendet:  
+nmap  
+wmap  
+sqlmap  
