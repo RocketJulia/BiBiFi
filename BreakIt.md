@@ -28,4 +28,15 @@ nmap
 wmap  
 sqlmap  
 
-Wenn die .jsps lassen sich einzeln aufrufen, aber keine weiteren Interaktionen und keine Einsicht in die Daten
+Wenn die .jsp's lassen sich einzeln aufrufen, aber keine weiteren Interaktionen und keine Einsicht in die Daten.
+http://localhost:8080/ATM/ATMAuswahl.jsp?css=%3CSCRIPT%3Ealert(123)%3C/script%3E
+
+Application stored nichts im Cache und im Storage.
+
+Ein User ist eingloggt.
+In einem anderen Browser kann man nun die .jsp's direkt aufrufen und ist dann im Account aus dem anderen Browser eingeloggt.
+
+Es können sich mehrer User anmelden, wenn einer dann z.B. Geld abhebt landen die anderen in der Session dieses Users.
+
+
+Es können long Überläufe erzeugt werden.
