@@ -4,7 +4,7 @@ https://github.com/SteSt1999/Webanwendung
 Stand: 08.11.2018 10:00
 
 
-10:12 Logout generiert Error 405, User ist ausgeloggt, sieht die Anwendung aber noch. Aktionen generieren Error 404
+Logout generiert Error 405, User ist ausgeloggt, sieht die Anwendung aber noch. Aktionen generieren Error 404
 
 X-Frame-Options nicht gesetzt. Clickjacking möglich siehe Clickjacking Demo
 XSS Protection not enabled
