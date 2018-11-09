@@ -10,8 +10,6 @@ X-Frame-Options nicht gesetzt. Clickjacking möglich siehe Clickjacking Demo
 XSS Protection not enabled  
 Passwort Autocomplete  
 
-Datenbankverbindung wird nicht geschlossen, nur ein User kann gleichzeitig auf die Anwendung zugreifen (Serverlogs)  
-
 An zwei Rechnern gleichzeitig an einem Account anmelden  
 * an beiden kann man geld Abheben  
 
@@ -31,3 +29,5 @@ Scanner verwendet:
 nmap  
 wmap  
 sqlmap  
+
+Wenn die .jsps lassen sich einzeln aufrufen, aber keine weiteren Interaktionen und keine Einsicht in die Daten
