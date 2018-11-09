@@ -20,7 +20,7 @@ Business Logik:
 Unsinnige Eingaben für Geldfelder werden großteils an der Oberfläche abgefangen,  
 eine geht und führt intern zu Errors:  
 - 0 eingeben  
-Man kann die Oberflächenprüfung iin der entwicklerconsole manipulieren, das ermöglicht noch andere unsinnige Eingaben, die alle zu Fehlern führen
+- Man kann die Oberflächenprüfung in der Entwicklerconsole manipulieren, das ermöglicht noch andere unsinnige Eingaben, die alle zu Fehlern führen
 
 
 Scanner verwendet:  
