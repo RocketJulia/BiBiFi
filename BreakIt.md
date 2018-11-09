@@ -25,3 +25,9 @@ Business Logik:
 Unsinnige Eingaben für Geldfelder werden großteils an der Oberfläche abgefangen,
 eine geht und führt intern zu Errors:
 - 0 eingeben
+
+
+Scanner verwendet:
+nmap
+wmap
+sqlmap
