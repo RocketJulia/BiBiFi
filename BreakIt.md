@@ -36,15 +36,14 @@ Application stored nichts im Cache und im Storage.
 Wenn die .jsp's lassen sich einzeln aufrufen, aber keine weiteren Interaktionen und keine Einsicht in die Daten, oder vielleicht doch (Siehe XSS Testing)...   
 http://localhost:8080/ATM/ATMAuswahl.jsp?css=%3CSCRIPT%3Ealert(123)%3C/script%3E  
 
-http://localhost:8080/Auswahl.jsp?BankID=hostbank%22%3E%3Cscript%3Ealert(123)%3C/script%3E
-
 Bei der Auswahl der Bank lassen sich flasche Eingaben machen, wenn man die .jsps direkt aufruft und über die URL die Werte setzt:  
-http://localhost:8080/Auswahl.jsp?BankID=falsche 
+http://localhost:8080/Auswahl.jsp?BankID=falsche  
 
 
 XSS Testing:  
 http://localhost:8080/Auswahl.jsp?BankID=%3Cscript%3Ealert(123)%3C/script%3E  
-Springt weiter, obwohl keine Bank ausgewählt
+http://localhost:8080/Auswahl.jsp?BankID=hostbank%22%3E%3Cscript%3Ealert(123)%3C/script%3E  
+Springt weiter, obwohl keine Bank ausgewählt  
 
 
 
