@@ -28,10 +28,15 @@ nmap
 wmap  
 sqlmap  
 
-Wenn die .jsp's lassen sich einzeln aufrufen, aber keine weiteren Interaktionen und keine Einsicht in die Daten.
-http://localhost:8080/ATM/ATMAuswahl.jsp?css=%3CSCRIPT%3Ealert(123)%3C/script%3E
 
 Application stored nichts im Cache und im Storage.  
+
+
+
+Wenn die .jsp's lassen sich einzeln aufrufen, aber keine weiteren Interaktionen und keine Einsicht in die Daten, oder vielleicht doch (Siehe XSS Testing)...   
+http://localhost:8080/ATM/ATMAuswahl.jsp?css=%3CSCRIPT%3Ealert(123)%3C/script%3E
+
+
 
 XSS Testing:  
 http://localhost:8080/Auswahl.jsp?BankID=%3Cscript%3Ealert(123)%3C/script%3E  
