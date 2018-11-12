@@ -18,4 +18,4 @@ Die Applikation ist dann [hier](http://localhost:8081/login) zu erreichen.
 |user@user.com   | user     | User  | -   |
 |rem@rem.com     | rem      | User  | -   |
 
-Der Admin hat Transactionen und der User eine einzige.
+Der Admin hat mehrere Transactionen und der User eine einzige.
