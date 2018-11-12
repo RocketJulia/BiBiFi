@@ -40,7 +40,7 @@ http://localhost:8080/ATM/ATMAuswahl.jsp?css=%3CSCRIPT%3Ealert(123)%3C/script%3E
 
 XSS Testing:  
 http://localhost:8080/Auswahl.jsp?BankID=%3Cscript%3Ealert(123)%3C/script%3E  
-Springt weiter, obwohl keine bank ausgewählt
+Springt weiter, obwohl keine Bank ausgewählt
 
 
 
