@@ -33,6 +33,12 @@ http://localhost:8080/ATM/ATMAuswahl.jsp?css=%3CSCRIPT%3Ealert(123)%3C/script%3E
 
 Application stored nichts im Cache und im Storage.  
 
+XSS Testing:  
+http://localhost:8080/Auswahl.jsp?BankID=%3Cscript%3Ealert(123)%3C/script%3E  
+Springt weiter, obwohl keine bank ausgewählt
+
+
+
 **----------------------------------------------------------------------------**
 
 ## Schwerwiegende Fehler  
