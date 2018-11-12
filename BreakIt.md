@@ -31,18 +31,22 @@ sqlmap
 Wenn die .jsp's lassen sich einzeln aufrufen, aber keine weiteren Interaktionen und keine Einsicht in die Daten.
 http://localhost:8080/ATM/ATMAuswahl.jsp?css=%3CSCRIPT%3Ealert(123)%3C/script%3E
 
-Application stored nichts im Cache und im Storage.
+Application stored nichts im Cache und im Storage.  
 
+**----------------------------------------------------------------------------**
 
-### Broken Session Management
-Ein User ist eingloggt.
-In einem anderen Browser kann man nun die .jsp's direkt aufrufen und ist dann im Account aus dem anderen Browser eingeloggt.
+## Schwerwiegende Fehler  
 
-Es können sich mehrer User anmelden, wenn einer dann z.B. Geld abhebt landen die anderen in der Session dieses Users.
+### Broken Session Management  
+Ein User ist eingloggt.  
+In einem anderen Browser kann man nun die .jsp's direkt aufrufen und ist dann im Account aus dem anderen Browser eingeloggt.  
+
+Es können sich mehrer User anmelden, wenn einer dann z.B. Geld abhebt landen die anderen in der Session dieses Users.  
 
 ### CSRF
-Ist möglich siehe PoC CSRF.
+Ist möglich siehe PoC CSRF.  
+
 
 ### Clickjacking
-Ist möglich siehe PoC Clickjacking.
+Ist möglich siehe PoC Clickjacking.  
 
