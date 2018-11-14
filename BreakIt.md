@@ -1,8 +1,13 @@
 Zu testende Anwendung:
 https://github.com/SteSt1999/Webanwendung
 
+
+Beschreibung Entwicklungsumgebung:  
 Anwendungsstand: 08.11.2018 10:00  
 
+
+
+Erster Scan der Anwendung mit dem OWASP ZAP:  
 X-Frame-Options nicht gesetzt. Clickjacking möglich siehe Clickjacking Demo  
 XSS Protection not enabled  
 Passwort Autocomplete  
@@ -49,7 +54,7 @@ Springt weiter, obwohl keine Bank ausgewählt
 
 **----------------------------------------------------------------------------**
 
-## Schwerwiegende Fehler  
+## Überschrift
 
 ### Broken Session Management  
 Ein User ist eingloggt.  
@@ -64,3 +69,21 @@ Ist möglich siehe PoC CSRF.
 ### Clickjacking
 Ist möglich siehe PoC Clickjacking.  
 
+### SQL Injection  
+Die Anwendung ist prinzipiell anfällig für SQL Injection.  
+
+Die Eingaben werden nicht auf Steuerzeichen überprüft und es wird kein Prepared Statement verwendet.  
+An der Oberfläche ist die länge der Eingabe meistens auf 50 Zeichen begrenzt, lässt sich aber ganz einfach hochsetzten um gültige Querrys zu erzeugen.  
+Folgende Eingabe in das Feld "Benutzername" auf der Seite "Mitarbeiter" ist zum Beispiel valide:    
+`stein.linda";INSERT INTO MITARBEITER VALUES("2","2","2","2"); SELECT vorname FROM KUNDEN WHERE ID = "1`  
+
+Allerdings wird diese Querry in einem Großteil der Fälle trotzdem nicht funktionieren, da der MySQL Connector/J ab Version 3.1.1 (stark veraltete legacy Version) keine Multi Querries mehr erlaubt.  
+
+## XSS  
+Die Anwendung ist theoretisch für XSS anfällig, da keine XSS Protection enabled ist.
+Allerdings lässt sich XSS praktisch nicht ausnutzen, da es auf keiner Seite eine Einfabe gibt, welche die nächste beeinflusst.
+Somit lässt sich dort kein Script mit rein integrieren.
+
+
+### Privilage Escalation
+Da es keine Privilages gibt und die Berechtigungen davon abhängen, ob der Account in der Tabelle Kunde oder Mitarbeiter steht, lässt sich keine priviliage escalation durchführen.
