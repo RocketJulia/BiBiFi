@@ -74,7 +74,7 @@ An der Oberfläche ist die länge der Eingabe meistens auf 50 Zeichen begrenzt, 
 Folgende Eingabe in das Feld "Benutzername" auf der Seite "Mitarbeiter" ist zum Beispiel valide:    
 `stein.linda";INSERT INTO MITARBEITER VALUES("2","2","2","2");#`
 
-Allerdings wird diese Querry in einem Großteil der Fälle trotzdem nicht funktionieren, da der [https://dev.mysql.com/doc/connector-j/5.1/en/connector-j-reference-configuration-properties.html](MySQL Connector/J ab Version 3.1.1) (stark veraltete legacy Version) keine Multi Querries mehr erlaubt. 
+Allerdings wird diese Querry in einem Großteil der Fälle trotzdem nicht funktionieren, da der [https://dev.mysql.com/doc/connector-j/5.1/en/connector-j-reference-configuration-properties.html] (MySQL Connector/J ab Version 3.1.1) (stark veraltete legacy Version) keine Multi Querries mehr erlaubt. 
 
 Es ist jedoch möglich einen timebased Angriff durchzuführen.  
 Mit der folgenden Querry kann man Benutzernamen und die die dazugehörenden Passwörter Character für Character aus der Datenbank ziehen.  
