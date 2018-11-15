@@ -10,6 +10,8 @@ MySQL 8.0.13
 Java 11.0.1   
 Tomcat 9.0.12   
 
+Tools:  
+Kali Linux  2018.4-vbox-amd64
 
 
 
