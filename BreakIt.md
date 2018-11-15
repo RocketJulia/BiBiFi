@@ -4,11 +4,18 @@ https://github.com/SteSt1999/Webanwendung
 
 ## Beschreibung Entwicklungsumgebung:  
 Anwendungsstand: 08.11.2018 10:00  
-Windows 10 Build 17134.345
+Betriebssystem: Windows 10 Build 17134.345 
+IDE: IntelliJ IDEA 2018.2.5 (Ultimate Edition)
+Build #IU-182.4892.20
+MySQL 8.0.13
+Java 11.0.1
+Tomcat 9.0.12
 
 
 
 
+
+## Sammeln von Informationen
 Erster Scan der Anwendung mit dem OWASP ZAP:  
 X-Frame-Options nicht gesetzt. Clickjacking möglich siehe Clickjacking Demo  
 XSS Protection not enabled  
@@ -62,7 +69,7 @@ Springt weiter, obwohl keine Bank ausgewählt
 Ein User ist eingloggt.  
 In einem anderen Browser kann man nun die .jsp's direkt aufrufen und ist dann im Account aus dem anderen Browser eingeloggt.  
 
-Es können sich mehrer User anmelden, wenn einer dann z.B. Geld abhebt landen die anderen in der Session dieses Users.  
+Es können sich immer nur ein User anmelden, wenn einer sich dann anmeldet überschreibt er die Session des ersten Users.  
 
 ### CSRF
 Ist möglich siehe PoC CSRF.  
@@ -77,7 +84,7 @@ Die Anwendung ist prinzipiell anfällig für SQL Injection.
 Die Eingaben werden nicht auf Steuerzeichen überprüft und es wird kein Prepared Statement verwendet.  
 An der Oberfläche ist die länge der Eingabe meistens auf 50 Zeichen begrenzt, lässt sich aber ganz einfach hochsetzten um gültige Querrys zu erzeugen.  
 Folgende Eingabe in das Feld "Benutzername" auf der Seite "Mitarbeiter" ist zum Beispiel valide:    
-`stein.linda";INSERT INTO MITARBEITER VALUES("2","2","2","2"); SELECT vorname FROM KUNDEN WHERE ID = "1`  
+`stein.linda";INSERT INTO MITARBEITER VALUES("2","2","2","2");#`
 
 Allerdings wird diese Querry in einem Großteil der Fälle trotzdem nicht funktionieren, da der MySQL Connector/J ab Version 3.1.1 (stark veraltete legacy Version) keine Multi Querries mehr erlaubt. 
 
@@ -88,10 +95,8 @@ Mit der folgenden Querry kann man Benutzernamen und die die dazugehörenden Pass
 
 
 ## XSS  
-Die Anwendung ist theoretisch für XSS anfällig, da keine XSS Protection enabled ist.
-Allerdings lässt sich XSS praktisch nicht ausnutzen, da es auf keiner Seite eine Einfabe gibt, welche die nächste beeinflusst.
-Somit lässt sich dort kein Script mit rein integrieren.
+Die Anwendung ist theoretisch für XSS anfällig, da keine XSS Protection enabled ist.  
+Allerdings lässt sich XSS praktisch nicht ausnutzen, da es auf keiner Seite eine Einfabe gibt, welche die nächste beeinflusst.  
+Somit lässt sich dort kein Script mit rein integrieren.  
 
 
-### Privilage Escalation
-Da es keine Privilages gibt und die Berechtigungen davon abhängen, ob der Account in der Tabelle Kunde oder Mitarbeiter steht, lässt sich keine priviliage escalation durchführen.
