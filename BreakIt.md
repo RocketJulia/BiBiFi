@@ -2,8 +2,10 @@ Zu testende Anwendung:
 https://github.com/SteSt1999/Webanwendung
 
 
-Beschreibung Entwicklungsumgebung:  
+## Beschreibung Entwicklungsumgebung:  
 Anwendungsstand: 08.11.2018 10:00  
+Windows 10 Build 17134.345
+
 
 
 
@@ -77,7 +79,13 @@ An der Oberfläche ist die länge der Eingabe meistens auf 50 Zeichen begrenzt, 
 Folgende Eingabe in das Feld "Benutzername" auf der Seite "Mitarbeiter" ist zum Beispiel valide:    
 `stein.linda";INSERT INTO MITARBEITER VALUES("2","2","2","2"); SELECT vorname FROM KUNDEN WHERE ID = "1`  
 
-Allerdings wird diese Querry in einem Großteil der Fälle trotzdem nicht funktionieren, da der MySQL Connector/J ab Version 3.1.1 (stark veraltete legacy Version) keine Multi Querries mehr erlaubt.  
+Allerdings wird diese Querry in einem Großteil der Fälle trotzdem nicht funktionieren, da der MySQL Connector/J ab Version 3.1.1 (stark veraltete legacy Version) keine Multi Querries mehr erlaubt. 
+
+Es ist jedoch möglich einen timebased Angriff durchzuführen.  
+Mit der folgenden Querry kann man Benutzernamen und die die dazugehörenden Passwörter Character für Character aus der Datenbank ziehen.  
+
+`1 UNION SELECT IF(SUBSTRING(KENNWORT,1,1) = CHAR(50),BENCHMARK(5000000,ENCODE('MSG','by 5 seconds')),null) FROM KUNDEN WHERE ID = 1;#`  
+
 
 ## XSS  
 Die Anwendung ist theoretisch für XSS anfällig, da keine XSS Protection enabled ist.
