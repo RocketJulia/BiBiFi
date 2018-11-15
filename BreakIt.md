@@ -77,7 +77,7 @@ Folgende Eingabe in das Feld "Benutzername" auf der Seite "Mitarbeiter" ist zum 
 Allerdings wird diese Querry in einem Großteil der Fälle trotzdem nicht funktionieren, da der  [MySQL Connector/J ab Version 3.1.1](https://dev.mysql.com/doc/connector-j/5.1/en/connector-j-reference-configuration-properties.html) (stark veraltete legacy Version) keine Multi Querries mehr erlaubt. 
 
 Es ist jedoch möglich einen timebased Angriff durchzuführen.  
-Mit der folgenden Querry kann man 
+Mit der folgenden Querry kann man zum Beispiel Passwörter enumerieren:  
 
 ```1" UNION SELECT IF(SUBSTRING(KENNWORT,1,1) = CHAR(80),BENCHMARK(10000000,sha1(1)),null) KENNWORT FROM KUNDEN WHERE ID = "stump.stefan```
 
