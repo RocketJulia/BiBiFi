@@ -84,7 +84,7 @@ Mit der folgenden Querry kann man zum Beispiel Passwörter enumerieren:
 ```1" UNION SELECT IF(SUBSTRING(KENNWORT,1,1) = CHAR(80),BENCHMARK(10000000,sha1(1)),null) KENNWORT FROM KUNDEN WHERE ID = "stump.stefan```
 
 
-## XSS  
+### XSS  
 Die Anwendung ist theoretisch für XSS anfällig, da keine XSS Protection enabled ist.  
 Allerdings lässt sich XSS praktisch nicht ausnutzen, da es auf keiner Seite eine Einfabe gibt, welche die nächste beeinflusst.  
 Somit lässt sich dort kein Script mit rein integrieren.  
