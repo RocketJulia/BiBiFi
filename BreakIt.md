@@ -3,13 +3,12 @@ https://github.com/SteSt1999/Webanwendung
 
 
 ## Beschreibung Entwicklungsumgebung:  
-Anwendungsstand: 08.11.2018 10:00  
-Betriebssystem: Windows 10 Build 17134.345 
-IDE: IntelliJ IDEA 2018.2.5 (Ultimate Edition)
-Build #IU-182.4892.20
-MySQL 8.0.13
-Java 11.0.1
-Tomcat 9.0.12
+Anwendungsstand: 08.11.2018 10:00   
+Betriebssystem: Windows 10 Build 17134.345   
+IDE: IntelliJ IDEA 2018.2.5 (Ultimate Edition) Build #IU-182.4892.20  
+MySQL 8.0.13   
+Java 11.0.1   
+Tomcat 9.0.12   
 
 
 
@@ -30,21 +29,10 @@ ATMServlet -> Servlet Architektur
 Fehlermeldung wenn irgendwas schiefläuft 405, keine weiteren Informationen  
 
 
-Business Logik:  
-Unsinnige Eingaben für Geldfelder werden großteils an der Oberfläche abgefangen,  
-eine geht und führt intern zu Errors:  
-- 0 eingeben  
-- Man kann die Oberflächenprüfung in der Entwicklerconsole manipulieren, das ermöglicht noch andere unsinnige Eingaben, die alle zu Fehlern führen
-
-
 Scanner verwendet:  
 nmap  
 wmap  
 sqlmap  
-
-
-Application stored nichts im Cache und im Storage.  
-
 
 
 Wenn die .jsp's lassen sich einzeln aufrufen, aber keine weiteren Interaktionen und keine Einsicht in die Daten, oder vielleicht doch (Siehe XSS Testing)...   
@@ -86,12 +74,12 @@ An der Oberfläche ist die länge der Eingabe meistens auf 50 Zeichen begrenzt, 
 Folgende Eingabe in das Feld "Benutzername" auf der Seite "Mitarbeiter" ist zum Beispiel valide:    
 `stein.linda";INSERT INTO MITARBEITER VALUES("2","2","2","2");#`
 
-Allerdings wird diese Querry in einem Großteil der Fälle trotzdem nicht funktionieren, da der MySQL Connector/J ab Version 3.1.1 (stark veraltete legacy Version) keine Multi Querries mehr erlaubt. 
+Allerdings wird diese Querry in einem Großteil der Fälle trotzdem nicht funktionieren, da der [https://dev.mysql.com/doc/connector-j/5.1/en/connector-j-reference-configuration-properties.html](MySQL Connector/J ab Version 3.1.1) (stark veraltete legacy Version) keine Multi Querries mehr erlaubt. 
 
 Es ist jedoch möglich einen timebased Angriff durchzuführen.  
 Mit der folgenden Querry kann man Benutzernamen und die die dazugehörenden Passwörter Character für Character aus der Datenbank ziehen.  
 
-```1 UNION SELECT IF(SUBSTRING(KENNWORT,1,1) = CHAR(50),BENCHMARK(5000000,ENCODE('MSG','by 5 seconds')),null) FROM KUNDEN WHERE ID = 1;#```  
+```1" UNION SELECT IF(SUBSTRING(KENNWORT,1,1) = CHAR(80), DO SLEEP(5),null) FROM KUNDEN WHERE ID = stump.stefan;#```  
 
 
 ## XSS  
