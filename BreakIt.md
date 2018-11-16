@@ -1,9 +1,6 @@
-Zu testende Anwendung:
-https://github.com/SteSt1999/Webanwendung
+# Pentest Webanwendung  
 
-
-## Beschreibung Entwicklungsumgebung:  
-Anwendungsstand: 08.11.2018 10:00   
+## Beschreibung Entwicklungsumgebung und Tools:     
 Betriebssystem: Windows 10 Build 17134.345   
 IDE: IntelliJ IDEA 2018.2.5 (Ultimate Edition) Build #IU-182.4892.20  
 MySQL 8.0.13   
@@ -15,6 +12,9 @@ Kali Linux  2018.4-vbox-amd64
 OWASP ZAP 2.7.0  
 Burp Suite Community Edition v1.7.36  
 
+Die zu testende Anwendung:  
+https://github.com/SteSt1999/Webanwendung  
+Anwendungsstand: 08.11.2018 10:00  
 
 
 ## Sammeln von Informationen
@@ -84,10 +84,12 @@ Mit der folgenden Querry kann man zum Beispiel Passwörter enumerieren:
 
 ```1" UNION SELECT IF(SUBSTRING(KENNWORT,1,1) = CHAR(80),BENCHMARK(10000000,sha1(1)),null) KENNWORT FROM KUNDEN WHERE ID = "stump.stefan```
 
+Dafür muss man nur den nur den Substring und Char variieren.
+Da die Passwörter in Klartext in der Datenbank liegen muss man nicht den Hash knacken, sondern hat diese direkt.
 
 ### XSS  
 Die Anwendung ist theoretisch für XSS anfällig, da keine XSS Protection enabled ist.  
-Allerdings lässt sich XSS praktisch nicht ausnutzen, da es auf keiner Seite eine Einfabe gibt, welche die nächste beeinflusst.  
+Allerdings lässt sich XSS praktisch nicht ausnutzen, da es auf keiner Seite eine Eingabe gibt, welche die nächste Seite mit beeinflusst.  
 Somit lässt sich dort kein Script mit rein integrieren.  
 
 
