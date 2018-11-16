@@ -11,8 +11,9 @@ Java 11.0.1
 Tomcat 9.0.12   
 
 Tools:  
-Kali Linux  2018.4-vbox-amd64
-
+Kali Linux  2018.4-vbox-amd64  
+OWASP ZAP 2.7.0  
+Burp Suite Community Edition v1.7.36  
 
 
 
